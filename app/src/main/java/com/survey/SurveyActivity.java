@@ -30,7 +30,7 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()) {
             case R.id.submit:
                 if (firstGroup.getCheckedRadioButtonId() == -1) {
-                    showMessageToast("select any option");
+                    showMessageToast("Select any option");
                     return;
                 }
                 showMessageToast("Survey submitted");
