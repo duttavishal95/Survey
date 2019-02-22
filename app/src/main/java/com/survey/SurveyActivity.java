@@ -33,7 +33,7 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
                     showMessageToast("Select any option");
                     return;
                 }
-                showMessageToast("Survey submitted");
+                showMessageToast("Survey Submitted");
                 break;
         }
     }
