@@ -39,37 +39,62 @@
         app:layout_constraintTop_toBottomOf="@+id/first_question">
 
         <RadioButton
+            android:id="@+id/excellent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Excellent" />
 
         <RadioButton
+            android:id="@+id/very_good"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Very Good" />
 
         <RadioButton
+            android:id="@+id/good"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Good" />
 
         <RadioButton
+            android:id="@+id/bad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bad" />
 
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/feedback"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Any Feedback?"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstSurvey" />
+
+    <EditText
+        android:id="@+id/answer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Add Something"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feedback" />
+
     <Button
         android:id="@+id/submit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:background="@color/colorAccent"
         android:text="Submit"
         android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstSurvey" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

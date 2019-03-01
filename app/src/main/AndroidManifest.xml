@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SurveyActivity" />
+        <activity android:name=".ConfirmationActivity" />
     </application>
 
 </manifest>
