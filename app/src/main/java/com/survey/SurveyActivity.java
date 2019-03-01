@@ -1,17 +1,19 @@
 package com.survey;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class SurveyActivity extends AppCompatActivity implements View.OnClickListener {
+public class SurveyActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     private RadioGroup firstGroup;
     private Button submit;
@@ -22,6 +24,8 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
     private RadioButton bad;
 
     private EditText feedback;
+
+    private String service;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +41,11 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
 
         submit = findViewById(R.id.submit);
         submit.setOnClickListener(this);
+
+        excellent.setOnCheckedChangeListener(this);
+        veryGood.setOnCheckedChangeListener(this);
+        good.setOnCheckedChangeListener(this);
+        bad.setOnCheckedChangeListener(this);
     }
 
 
@@ -51,12 +60,44 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
                     showMessageToast("Enter feedback");
                     return;
                 }
-                showMessageToast("Survey Submitted");
+                Intent intent = new Intent(getApplicationContext(), ConfirmationActivity.class);
+                intent.putExtra("service", service);
+                intent.putExtra("answer", feedback.getText().toString());
+                startActivity(intent);
                 break;
         }
     }
 
     private void showMessageToast(String toastMessage) {
         Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        switch (buttonView.getId()) {
+            case R.id.excellent:
+                if (isChecked) {
+                    service = "Excellent";
+                }
+                break;
+
+            case R.id.very_good:
+                if (isChecked) {
+                    service = "Very Good";
+                }
+                break;
+
+            case R.id.good:
+                if (isChecked) {
+                    service = "Good";
+                }
+                break;
+
+            case R.id.bad:
+                if (isChecked) {
+                    service = "Bad";
+                }
+                break;
+        }
     }
 }
