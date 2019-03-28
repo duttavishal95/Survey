@@ -3,7 +3,7 @@ package com.survey.login_model;
 public class Response {
 
 private String status;
-private Data data;
+private Integer user_id;
 
 public String getStatus() {
 return status;
@@ -13,12 +13,11 @@ public void setStatus(String status) {
 this.status = status;
 }
 
-public Data getData() {
-return data;
-}
+    public Integer getUser_id() {
+        return user_id;
+    }
 
-public void setData(Data data) {
-this.data = data;
-}
-
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
+    }
 }

@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private Button login;
     private ProgressDialog dialog;
+    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +74,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
         dialog.dismiss();
         if (response.body() instanceof LoginResponse) {
+            userId = response.body().getResponse().getUser_id();
             Intent intent = new Intent(getApplicationContext(), SurveyActivity.class);
+            intent.putExtra("user_id", userId);
             startActivity(intent);
+            finish();
         } else {
             showMessageToast("Invalid Username and password");
         }
