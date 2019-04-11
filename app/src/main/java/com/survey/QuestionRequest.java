@@ -1,6 +1,6 @@
 package com.survey;
 
-public class SurveyRequest {
+public class QuestionRequest {
     private int user_id;
     private int question_id;
     private String answer;

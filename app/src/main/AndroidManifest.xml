@@ -12,16 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SurveyActivity" />
-        <activity android:name=".ConfirmationActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".QuestionActivity" />
         <activity android:name=".FinalScreen" />
+        <activity android:name=".SurveyActivity" />
     </application>
 
 </manifest>

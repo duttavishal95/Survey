@@ -1,6 +1,6 @@
-package com.survey.survey_response;
+package com.survey.question_response;
 
-public class SurveyRequestResponse {
+public class QuestionRequestResponse {
     private RequestResponse response;
 
     public RequestResponse getResponse() {
